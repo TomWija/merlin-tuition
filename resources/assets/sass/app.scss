@@ -1,6 +1,7 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500i,700,900');
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
@@ -10,10 +11,15 @@
 @import 'utils/mixins';
 
 // base
-@import 'base/typography'
+@import 'base/typography';
 
 // components
 
 // layout
+@import 'layout/heading';
 
 // pages
+
+body {
+	background-color: palette('paper');
+}

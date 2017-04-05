@@ -1,7 +1,11 @@
 // Palette
 
 $palette: (
-    pureWhite: #FFF
+    pureWhite: #FFFFFF,
+    paper: #F4F4EF,
+    fadedNavy: #444C5C,
+    warmYellow: #E1B16A,
+    charcoal: #353C3F
 );
 
 @function palette($color) {

@@ -8,9 +8,10 @@
         <title>Merlin Tuition</title>
 
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="shortcut icon" href="{{ asset('favicon.png') }}" >
     </head>
     <body>
-
+        @include('components.heading')
         @yield('content')
 
         <script type="text/javascript" src="{{ elixir('js/app.js') }}"></script>
