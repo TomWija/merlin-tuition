@@ -1,0 +1,9 @@
+// Palette
+
+$palette: (
+    pureWhite: #FFF
+);
+
+@function palette($color) {
+    @return map-get($palette, $color);
+}
