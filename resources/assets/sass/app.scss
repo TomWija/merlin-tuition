@@ -12,6 +12,7 @@
 
 // base
 @import 'base/typography';
+@import 'base/global';
 
 // components
 
@@ -19,7 +20,3 @@
 @import 'layout/heading';
 
 // pages
-
-body {
-	background-color: palette('paper');
-}
