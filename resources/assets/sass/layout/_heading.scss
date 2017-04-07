@@ -1,6 +1,6 @@
 .heading {
 	background-color: palette('fadedNavy');
-	color: palette('purewhite');
+	color: palette('pureWhite');
 	padding: 15px;
 	width: 100vw;
 	position: fixed;
@@ -16,10 +16,12 @@
 			font-size: 3rem;
 			max-width: 75%;
 			display: inline-block;
+			line-height: 40px;
 			@include breakpoint(sm) {
 				font-size: 8rem;
 				max-width: 100%;
 				display: block;
+				line-height: initial;
 			}
 		}
 		&--secondary {
@@ -34,10 +36,22 @@
 		}
 	}
 
+	&__hamburger {
+		background-color: red;
+		float: right;
+		width: 40px;
+		height: 40px;
+		@include breakpoint(sm) {
+			display: none;
+		}
+	}
+
 	&__navigation {
 		height: 100vh;
 		width: 100%;
-
+		@include breakpoint(sm) {
+			height: auto;
+		}
 		ul {
 			margin-top: 15px;
 			list-style: none;
@@ -45,14 +59,12 @@
 
 			li {
 				padding: 15px 0;
-				border-top: 1px solid palette('purewhite');
+				border-top: 1px solid palette('pureWhite');
 			}
 
 			li:last-child {
-				border-bottom: 1px solid palette('purewhite');
+				border-bottom: 1px solid palette('pureWhite');
 			}
 		}
-
-
 	}
 }
