@@ -1,19 +1,58 @@
 .heading {
 	background-color: palette('fadedNavy');
-	text-align: center;
-	color: palette('pureWhite');
+	color: palette('purewhite');
 	padding: 15px;
+	width: 100vw;
+	position: fixed;
+
+	@include breakpoint(sm) {
+		position: static;
+		text-align: center;
+	}
 
 	&__branding {
 		&--primary {
-			font-size: 8rem;
 			font-weight: 700;
+			font-size: 3rem;
+			max-width: 75%;
+			display: inline-block;
+			@include breakpoint(sm) {
+				font-size: 8rem;
+				max-width: 100%;
+				display: block;
+			}
 		}
 		&--secondary {
-			font-size: 1.4rem;
-			font-weight: 300;
-			letter-spacing: 4px;
-			word-spacing: 5px;
+			display: none;
+			@include breakpoint(sm) {
+				display: block;
+				font-size: 1.4rem;
+				font-weight: 300;
+				letter-spacing: 4px;
+				word-spacing: 5px;
+			}
 		}
+	}
+
+	&__navigation {
+		height: 100vh;
+		width: 100%;
+
+		ul {
+			margin-top: 15px;
+			list-style: none;
+			padding: 0 15px;
+
+			li {
+				padding: 15px 0;
+				border-top: 1px solid palette('purewhite');
+			}
+
+			li:last-child {
+				border-bottom: 1px solid palette('purewhite');
+			}
+		}
+
+
 	}
 }
