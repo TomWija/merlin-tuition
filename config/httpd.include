@@ -1,0 +1,14 @@
+<VirtualHost *:80>
+	ServerName merlintuition.tom.dev
+	ServerAdmin webmaster@localhost
+	DocumentRoot /var/www/vhosts/merlintuition/public
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+	<Directory /var/www/vhosts/merlintuition/public>
+		Allowoverride All
+	</Directory>	
+</VirtualHost>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet

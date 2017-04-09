@@ -14,9 +14,9 @@
 		&--primary {
 			font-weight: 700;
 			font-size: 3rem;
-			max-width: 75%;
 			display: inline-block;
 			line-height: 40px;
+
 			@include breakpoint(sm) {
 				font-size: 8rem;
 				max-width: 100%;
@@ -26,6 +26,7 @@
 		}
 		&--secondary {
 			display: none;
+
 			@include breakpoint(sm) {
 				display: block;
 				font-size: 1.4rem;
@@ -37,25 +38,55 @@
 	}
 
 	&__hamburger {
-		background-color: red;
+		border: 1px solid white;
+		border-radius: 10px;
 		float: right;
 		width: 40px;
 		height: 40px;
+		cursor: pointer;
+		text-align: center;
+		font-size: 2.5rem;
+		line-height: 43px;
+
+		&.open {
+			background-color: lighten(palette('fadedNavy'), 15%);
+		}
+
 		@include breakpoint(sm) {
 			display: none;
+		}
+	}
+
+	&__navigation-container {
+		color: white;
+		background-color: rgba(68,76,92, 0);
+
+
+		@include breakpoint(sm) {
+			display: block;
+			height: auto;
+			background-color: palette('fadedNavy') !important;
 		}
 	}
 
 	&__navigation {
 		height: 100vh;
 		width: 100%;
+		display: none;
+
+		&.open {
+			display: block;
+		}
+
 		@include breakpoint(sm) {
+			display: block;
 			height: auto;
 		}
+
 		ul {
 			margin-top: 15px;
 			list-style: none;
-			padding: 0 15px;
+			padding: 0;
 
 			li {
 				padding: 15px 0;
@@ -66,5 +97,15 @@
 				border-bottom: 1px solid palette('pureWhite');
 			}
 		}
+	}
+}
+
+.mobile-heading-padding {
+	padding-top: 70px;
+	height: 0px;
+	width: 0px;
+
+	@include breakpoint(sm) {
+		display: none;
 	}
 }
