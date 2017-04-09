@@ -8,6 +8,7 @@
 	@include breakpoint(sm) {
 		position: static;
 		text-align: center;
+		padding: 15px 15px 0px 15px;
 	}
 
 	&__branding {
@@ -33,6 +34,8 @@
 				font-weight: 300;
 				letter-spacing: 4px;
 				word-spacing: 5px;
+				padding-bottom: 15px;
+				border-bottom: 1px solid white;
 			}
 		}
 	}
@@ -87,15 +90,36 @@
 			margin-top: 15px;
 			list-style: none;
 			padding: 0;
+			@include breakpoint(sm) {
+				margin-bottom: 15px;
+				text-align: center;
+			}
 
 			li {
 				padding: 15px 0;
 				border-top: 1px solid palette('pureWhite');
+				@include breakpoint(sm) {
+					border: none;
+					padding: 0;
+					display: inline;
+					margin: 0 43px;
+				}
 			}
 
 			li:last-child {
 				border-bottom: 1px solid palette('pureWhite');
+				@include breakpoint(sm) {
+					border: none;
+					margin-right: 0px;
+				}
 			}
+
+			li:first-child {
+				@include breakpoint(sm) {
+					margin-left: 0px;
+				}
+			}
+
 		}
 	}
 }
