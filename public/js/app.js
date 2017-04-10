@@ -10471,17 +10471,17 @@ __webpack_require__(6);
 	$('.heading__hamburger').toggleClass('open');
 
 	if ($('.heading__navigation').hasClass('open')) {
-		$('#navigation-container').animate({
-			backgroundColor: 'rgba(68,76,92,0)'
-		});
-		setTimeout(function () {
-			$('.heading__navigation').toggleClass('open');
-		}, 500);
+		// $('#navigation-container').animate({
+		//  		backgroundColor: 'rgba(68,76,92,0)'
+		// });
+		// setTimeout(function() {
+		$('.heading__navigation').toggleClass('open');
+		// }, 500);
 	} else {
 		$('.heading__navigation').toggleClass('open');
-		$('#navigation-container').animate({
-			backgroundColor: 'rgba(68,76,92,1)'
-		});
+		// $('#navigation-container').animate({
+		//  		backgroundColor: 'rgba(68,76,92,1)'
+		// });
 	}
 
 	// Stop scrolling when menu is open

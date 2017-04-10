@@ -10,3 +10,37 @@ body, html {
 .no-gutters {
 	padding: 0;
 }
+
+.vertical-gutters {
+	&--small {
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+
+	&--medium {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+
+	&--large {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+}
+
+.horizontal-gutters {
+	&--small {
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+
+	&--medium {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	
+	&--large {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+}

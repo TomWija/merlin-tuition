@@ -6,7 +6,8 @@
 	position: fixed;
 
 	@include breakpoint(sm) {
-		position: static;
+		z-index: 100;
+		position: fixed;
 		text-align: center;
 		padding: 15px 15px 0px 15px;
 	}
@@ -62,11 +63,13 @@
 
 	&__navigation-container {
 		color: white;
-		background-color: rgba(68,76,92, 0);
-
+		background-color: rgba(68,76,92, 100);
+		z-index: 99;
 
 		@include breakpoint(sm) {
-			display: block;
+			padding-top: 146px;
+			width: 100%;
+			position: fixed;
 			height: auto;
 			background-color: palette('fadedNavy') !important;
 		}
@@ -79,6 +82,7 @@
 
 		&.open {
 			display: block;
+			background-color: palette('fadedNavy');
 		}
 
 		@include breakpoint(sm) {
@@ -130,6 +134,6 @@
 	width: 0px;
 
 	@include breakpoint(sm) {
-		display: none;
+		padding-top: 195px;
 	}
 }
