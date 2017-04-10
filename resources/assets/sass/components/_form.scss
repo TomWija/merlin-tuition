@@ -1,0 +1,37 @@
+.rounded {
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+}
+
+.select--primary {
+	background-color: rgba(255,255,255,0.8);
+	width: 100%;
+	margin: auto;
+}
+
+select, input{
+	display: block;
+	margin: 10px auto;
+	width: 100%;
+	height: 50px;
+}
+
+input {
+	&.cta {
+		&--primary {
+			background: palette('fadedNavy');
+			background: linear-gradient(to right, palette('fadedNavy') , lighten(palette('fadedNavy'), 15%));
+			color: white;
+			border: none;
+		    font-weight: 100;
+	    	font-size: 1.8rem;
+		}
+	}
+}
+
+select {
+   background: transparent;
+   border: none;
+   padding: 5px;
+}
