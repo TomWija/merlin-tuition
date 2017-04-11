@@ -1,5 +1,15 @@
 .splash {
-	background: url(../../images/splash.jpg);
+	background-image:linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url(../../images/splash.jpg);
 	background-size: cover;
-	height: 450px;
+	height: auto;
+
+	&__heading {
+		padding: 40px 0 20px;
+		color: white;
+		text-align: center;
+	}
+
+	&__form {
+		padding: 20px 0;
+	}
 }

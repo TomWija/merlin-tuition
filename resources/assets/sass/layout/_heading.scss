@@ -4,9 +4,9 @@
 	padding: 15px;
 	width: 100vw;
 	position: fixed;
+	z-index: 100;
 
 	@include breakpoint(sm) {
-		z-index: 100;
 		position: fixed;
 		text-align: center;
 		padding: 15px 15px 0px 15px;
