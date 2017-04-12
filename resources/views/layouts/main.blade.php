@@ -13,7 +13,7 @@
     <body>
         @include('components.heading')
         @yield('content')
-
+        @include('components.footer')
         <script type="text/javascript" src="{{ elixir('js/app.js') }}"></script>
     </body>
 </html>
