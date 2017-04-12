@@ -7,6 +7,9 @@
 		padding: 40px 0 20px;
 		color: white;
 		text-align: center;
+		@include breakpoint(sm) {
+			padding: 120px 0 80px;
+		}
 	}
 
 	&__form {

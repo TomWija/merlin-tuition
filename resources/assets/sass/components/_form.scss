@@ -1,15 +1,3 @@
-.rounded {
-	-webkit-border-radius: 25px;
-	-moz-border-radius: 25px;
-	border-radius: 25px;
-}
-
-.select--primary {
-	background-color: rgba(255,255,255,0.8);
-	width: 100%;
-	margin: auto;
-}
-
 select, input{
 	display: block;
 	margin: 10px auto;
@@ -28,10 +16,32 @@ input {
 	    	font-size: 1.8rem;
 		}
 	}
+
+	&:focus {
+		outline: none;
+	}
 }
 
 select {
    background: transparent;
    border: none;
-   padding: 5px;
+
+   &:focus {
+	   outline: none;
+   }
+}
+
+.rounded {
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+}
+
+.select--primary {
+	background-color: rgba(255,255,255,0.8);
+	width: 100%;
+	margin: auto;
+    padding-left: 15px;
+	background: rgba(255,255,255,0.8) url(../../images/dropdown_graphic.png) no-repeat 100% 50%;
+	background-size: contain;
 }
