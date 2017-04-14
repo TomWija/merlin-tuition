@@ -10,11 +10,10 @@
 			<div class="home__card">
 				<div class="home__card-image" style="background: url({{ asset('placeholder.png') }});"></div>
 				<h2>Column 1 Heading</h2>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-				natoque penatibus et magnis dis parturient montes, nascetur
-				ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-				eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+				<p>This will have a maximum of 250 characters length. If the
+				content entered is shorter than 250 characters, the length
+				of the card will still be the same as if it were filled up. The
+				picture will also be chooseable.</p>
 			</div>
 		</div>
 
@@ -22,11 +21,10 @@
 			<div class="home__card">
 				<div class="home__card-image" style="background: url({{ asset('placeholder.png') }});"></div>
 				<h2>Column 2 Heading</h2>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-				natoque penatibus et magnis dis parturient montes, nascetur
-				ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-				eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+				<p>This will have a maximum of 250 characters length. If the
+				content entered is shorter than 250 characters, the length
+				of the card will still be the same as if it were filled up.The
+				picture will also be chooseable.</p>
 			</div>
 		</div>
 
@@ -34,11 +32,10 @@
 			<div class="home__card">
 				<div class="home__card-image" style="background: url({{ asset('placeholder.png') }});"></div>
 				<h2>Column 3 Heading</h2>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-				Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-				natoque penatibus et magnis dis parturient montes, nascetur
-				ridiculus mus. Donec quam felis, ultricies nec, pellentesque
-				eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+				<p>This will have a maximum of 250 characters length. If the
+				content entered is shorter than 250 characters, the length
+				of the card will still be the same as if it were filled up.The
+				picture will also be chooseable.</p>
 			</div>
 		</div>
 	</div>

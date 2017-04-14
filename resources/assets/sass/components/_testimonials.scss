@@ -1,0 +1,81 @@
+.testimonials {
+
+	&__card {
+		width: 75%;
+		margin: 15px auto;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+
+		&-quote {
+			margin: 5px 0;
+			position: relative;
+			min-height: 100px;
+			width: 100%;
+			background: rgba(185, 185, 185, 0.35);
+			color: rgb(142,142,142);
+
+			@include breakpoint(sm) {
+				-webkit-transform: skew(20deg);
+				-moz-transform: skew(20deg);
+				-o-transform: skew(20deg);
+				transform: skew(20deg);
+			}
+
+			&:after {
+				content: "\201D";
+				position: absolute;
+				font-size: 6.5rem;
+			    right: 25px;
+			    bottom: -45px;
+				font-family: 'Libre Baskerville', serif;
+				font-weight: bold;
+
+				@include breakpoint(sm) {
+					-webkit-transform: skew(-20deg);
+					-moz-transform: skew(-20deg);
+					-o-transform: skew(-20deg);
+					transform: skew(-20deg);
+				}
+			}
+
+			&:before {
+				content: "\201C";
+				position: absolute;
+				font-size: 6.5rem;
+			    top: 0px;
+			    left: 10px;
+				font-family: 'Libre Baskerville', serif;
+				font-weight: bold;
+
+				@include breakpoint(sm) {
+					-webkit-transform: skew(-20deg);
+					-moz-transform: skew(-20deg);
+					-o-transform: skew(-20deg);
+					transform: skew(-20deg);
+				}
+			}
+		}
+
+		&-header {
+			font-size: 1.7rem;
+			font-family: 'Libre Baskerville', serif;
+		    letter-spacing: 0.4px;
+		    word-spacing: 2px;
+			@include breakpoint(sm) {
+				margin-left: -15px;
+			}
+		}
+
+		p {
+			padding: 15px;
+
+			@include breakpoint(sm) {
+				-webkit-transform: skew(-20deg);
+				-moz-transform: skew(-20deg);
+				-o-transform: skew(-20deg);
+				transform: skew(-20deg);
+			}
+		}
+	}
+}

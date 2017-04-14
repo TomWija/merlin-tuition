@@ -11,9 +11,9 @@
         <link rel="shortcut icon" href="{{ asset('favicon.png') }}" >
     </head>
     <body>
-        @include('components.heading')
+        @include('layouts.heading')
         @yield('content')
-        @include('components.footer')
+        @include('layouts.footer')
         <script type="text/javascript" src="{{ elixir('js/app.js') }}"></script>
         <script type="text/javascript" src="//cdn.jsdelivr.net/cookie-bar/1/cookiebar-latest.min.js?theme=flying&tracking=1"></script>
     </body>
