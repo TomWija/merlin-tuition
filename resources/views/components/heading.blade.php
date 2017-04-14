@@ -10,11 +10,11 @@
 <div id="navigation-container" class="container-fluid heading__navigation-container">
 	<div class="heading__navigation">
 		<ul>
-			<li>Home</li>
-			<li>About Us</li>
-			<li>Become a Student</li>
-			<li>Become a Tutor</li>
-			<li>Contact Us</li>
+			<li><a href="{{ route('home') }}">Home</a></li>
+			<li><a href="{{ route('about') }}">About Us</a></li>
+			<li><a href="{{ route('become-student') }}">Become a Student</a></li>
+			<li><a href="{{ route('become-tutor') }}">Become a Tutor</a></li>
+			<li><a href="{{ route('home') }}">Contact Us</a></li>
 		</ul>
 	</div>
 </div>

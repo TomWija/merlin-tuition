@@ -13,8 +13,16 @@
 
 Route::get('/', function () {
     return view('home.index');
-});
+})->name('home');
 
 Route::get('about', function() {
     return view('about.index');
-});
+})->name('about');
+
+Route::get('become-student', function() {
+    return view('become-student.index');
+})->name('become-student');
+
+Route::get('become-tutor', function() {
+    return view('become-tutor.index');
+})->name('become-tutor');
