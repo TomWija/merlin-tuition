@@ -24,6 +24,12 @@
 				max-width: 100%;
 				display: block;
 				line-height: initial;
+				@include transition(font-size .3s ease);
+
+				&.scrolled {
+					font-size: 3rem;
+				}
+
 			}
 		}
 		&--secondary {
@@ -37,6 +43,11 @@
 				word-spacing: 5px;
 				padding-bottom: 15px;
 				border-bottom: 1px solid white;
+				@include transition(font-size .3s ease);
+
+				&.scrolled {
+					font-size: 0;
+				}
 			}
 		}
 	}
@@ -72,6 +83,11 @@
 			position: fixed;
 			height: auto;
 			background-color: palette('fadedNavy') !important;
+			@include transition(padding-top .3s ease);
+
+			&.scrolled {
+				padding-top: 70px;
+			}
 		}
 	}
 
@@ -135,8 +151,13 @@
 	padding-top: 70px;
 	height: 0px;
 	width: 0px;
+	@include transition(padding-top .3s ease);
 
 	@include breakpoint(sm) {
 		padding-top: 195px;
+
+		&.scrolled {
+			padding-top: 120px;
+		}
 	}
 }

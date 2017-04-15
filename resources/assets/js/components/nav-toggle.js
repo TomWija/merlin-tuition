@@ -3,17 +3,9 @@ $('#mobile-nav-toggle').click(function() {
 	$('.heading__hamburger').toggleClass('open');
 
 	if($('.heading__navigation').hasClass('open')) {
-		// $('#navigation-container').animate({
-	 //  		backgroundColor: 'rgba(68,76,92,0)'
-		// });
-		// setTimeout(function() {
-			$('.heading__navigation').toggleClass('open');
-		// }, 500);
+		$('.heading__navigation').toggleClass('open');
 	} else {
 		$('.heading__navigation').toggleClass('open');
-		// $('#navigation-container').animate({
-	 //  		backgroundColor: 'rgba(68,76,92,1)'
-		// });
 	}
 
 	// Stop scrolling when menu is open
@@ -25,3 +17,20 @@ $('#mobile-nav-toggle').click(function() {
 		$('body').removeClass('stop-scrolling');
 	}
 });
+
+
+function shrinkBranding() {
+	if($(window).scrollTop() === 0) {
+		$(".heading__branding--primary").removeClass('scrolled');
+		$(".heading__branding--secondary").removeClass('scrolled');
+		$("#navigation-container").removeClass('scrolled');
+		$(".mobile-heading-padding").removeClass('scrolled');
+	} else {
+		$(".heading__branding--primary").addClass('scrolled');
+		$(".heading__branding--secondary").addClass('scrolled');
+		$("#navigation-container").addClass('scrolled');
+		$(".mobile-heading-padding").addClass('scrolled');
+	}
+}
+
+window.addEventListener('scroll', _.throttle(shrinkBranding, 1000, { trailing: true, leading: true }));
