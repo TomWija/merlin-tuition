@@ -21,3 +21,4 @@ require('./bootstrap');
 
 
 require('./components/nav-toggle');
+require('./components/file-uploader');

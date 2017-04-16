@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10352,6 +10352,7 @@ __webpack_require__(3);
 // });
 
 
+__webpack_require__(6);
 __webpack_require__(5);
 
 /***/ }),
@@ -10365,7 +10366,7 @@ __webpack_require__(5);
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(7);
+window._ = __webpack_require__(8);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -10376,7 +10377,7 @@ window._ = __webpack_require__(7);
 window.$ = window.jQuery = __webpack_require__(0);
 
 __webpack_require__(4);
-__webpack_require__(6);
+__webpack_require__(7);
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
@@ -10466,6 +10467,23 @@ __webpack_require__(6);
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/* WEBPACK VAR INJECTION */(function($) {var inputs = document.querySelectorAll('.inputfile');
+Array.prototype.forEach.call(inputs, function (input) {
+	var label = $("label[for='" + $(input).attr('id') + "']");
+	labelVal = label.html();
+	input.addEventListener('change', function (e) {
+		var fileName = '';
+		if (this.files && this.files.length > 1) fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);else fileName = e.target.value.split('\\').pop();
+
+		if (fileName) label.html('<span class="glyphicon glyphicon-open"></span>&nbsp;&nbsp;&nbsp;' + fileName);else label.html('<span class="glyphicon glyphicon-open"></span>&nbsp;&nbsp;&nbsp;' + labelVal);
+	});
+});
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
 /* WEBPACK VAR INJECTION */(function($) {$('#mobile-nav-toggle').click(function () {
 
 	$('.heading__hamburger').toggleClass('open');
@@ -10506,7 +10524,7 @@ window.addEventListener('scroll', _.throttle(shrinkBranding, 1000, { trailing: t
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/*!
@@ -12890,7 +12908,7 @@ if (typeof jQuery === 'undefined') {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -29979,10 +29997,10 @@ if (typeof jQuery === 'undefined') {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(9)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9), __webpack_require__(10)(module)))
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 var g;
@@ -30009,7 +30027,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -30037,7 +30055,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);

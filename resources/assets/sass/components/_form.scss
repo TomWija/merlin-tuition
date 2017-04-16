@@ -5,7 +5,43 @@ select, input{
 	height: 50px;
 }
 
+label {
+	display: block;
+	margin-left: 20px;
+
+	&.file-upload-button {
+		margin-left: 0;
+		cursor: pointer;
+		background: #8893a9;
+		color: white;
+		border: none;
+	    font-weight: 100;
+    	font-size: 1.8rem;
+		padding: 0;
+		border-radius: 25px;
+		height: 50px;
+	    line-height: 50px;
+	    padding-left: 25px;
+	}
+}
+
+textarea {
+	border: 1px solid lightgrey;
+	border-radius: 25px;
+	width: 100%;
+	padding: 10px 20px;
+	margin: 10px auto;
+
+	&:focus {
+		outline: none;
+	}
+}
+
 input {
+	border: 1px solid lightgrey;
+	border-radius: 25px;
+	padding-left: 25px;
+
 	&.cta {
 		&--primary {
 			background: palette('fadedNavy');
@@ -14,7 +50,12 @@ input {
 			border: none;
 		    font-weight: 100;
 	    	font-size: 1.8rem;
+			padding: 0;
 		}
+	}
+
+	&.inputfile {
+		display: none;
 	}
 
 	&:focus {
