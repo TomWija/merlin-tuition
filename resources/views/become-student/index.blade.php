@@ -48,6 +48,12 @@
 					</div>
 				</div>
 
+				<div class="row become-student__form-row vertical-gutters--medium">
+					<div class="col-xs-12">
+						<a class="become-student__add-subject-button" href="#">Add another subject...</a>
+					</div>
+				</div>
+
 				<div class="row become-student__form-row">
 					<div class="col-xs-12">
 						<label>Location*</label>
@@ -57,8 +63,10 @@
 
 				<div class="row become-student__form-row">
 					<div class="col-xs-12">
-						<label>Student Details</label>
-						<input type="text" />
+						<label>Additional inormation</label>
+						<div>
+							<textarea rows="4"></textarea>
+						</div>
 					</div>
 				</div>
 
