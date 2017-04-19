@@ -17,12 +17,12 @@
 				</div>
 
 				<div class="row become-tutor__form-row">
-					<div class="col-md-6">
+					<div class="col-sm-6">
 						<label>E-mail Address*</label>
 						<input type="text" />
 					</div>
 
-					<div class="col-md-6">
+					<div class="col-sm-6">
 						<label>Contact Number</label>
 						<input type="text" />
 					</div>
