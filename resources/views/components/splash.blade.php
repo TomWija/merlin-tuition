@@ -1,19 +1,23 @@
 <div class="container-fluid splash">
 	<div class="container">
 		<h1 class="splash__heading">{{ $pageContent->where('key', 'splash.header')->first()->content }}</h1>
-		<form class="splash__form">
+		<form action="{{ route('become-student') }}" class="splash__form">
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="rounded select--primary">
-						<select name="subject-one">
+						<select name="subjectOne">
 							<option>English</option>
+							<option>Maths</option>
+							<option>ICT</option>
 						</select>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="rounded select--primary ">
-						<select name="level-one">
+						<select name="levelOne">
 							<option>GCSE</option>
+							<option>A-Level</option>
+							<option>Bachelor's Degree</option>
 						</select>
 					</div>
 				</div>

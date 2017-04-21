@@ -32,8 +32,10 @@
 					<div class="col-sm-6">
 						<label>Subject</label>
 						<div class="rounded select--primary">
-							<select name="subject-one">
-								<option>English</option>
+							<select name="subjectOne">
+								<option {{ $params['subjectOne'] == 'English' ? "selected='selected'" : ""}}>English</option>
+								<option {{ $params['subjectOne'] == 'Maths' ? "selected='selected'" : ""}}>Maths</option>
+								<option {{ $params['subjectOne'] == 'ICT' ? "selected='selected'" : ""}}>ICT</option>
 							</select>
 						</div>
 					</div>
@@ -41,8 +43,10 @@
 					<div class="col-sm-6">
 						<label>Level</label>
 						<div class="rounded select--primary ">
-							<select name="level-one">
+							<select name="levelOne">
 								<option>GCSE</option>
+								<option>A-Level</option>
+								<option>Bachelor's Degree</option>
 							</select>
 						</div>
 					</div>
