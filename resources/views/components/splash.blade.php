@@ -1,6 +1,6 @@
 <div class="container-fluid splash">
 	<div class="container">
-		<h1 class="splash__heading">This is the main heading for the splash!</h1>
+		<h1 class="splash__heading">{{ $pageContent->where('key', 'splash.header')->first()->content }}</h1>
 		<form class="splash__form">
 			<div class="row">
 				<div class="col-sm-4">
