@@ -16,8 +16,8 @@
 					<div class="rounded select--primary ">
 						<select name="levelOne">
 							<option>GCSE</option>
-							<option>A-Level</option>
-							<option>Bachelor's Degree</option>
+							<option value="ALevel">A-Level</option>
+							<option value="BSc">Bachelor's Degree</option>
 						</select>
 					</div>
 				</div>

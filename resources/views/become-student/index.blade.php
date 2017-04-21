@@ -44,9 +44,9 @@
 						<label>Level</label>
 						<div class="rounded select--primary ">
 							<select name="levelOne">
-								<option>GCSE</option>
-								<option>A-Level</option>
-								<option>Bachelor's Degree</option>
+								<option {{ $params['levelOne'] == 'GCSE' ? "selected='selected'" : ""}}>GCSE</option>
+								<option {{ $params['levelOne'] == 'ALevel' ? "selected='selected'" : ""}}>A-Level</option>
+								<option {{ $params['levelOne'] == 'BSc ? "selected='selected'" : ""}}>Bachelor's Degree</option>
 							</select>
 						</div>
 					</div>
