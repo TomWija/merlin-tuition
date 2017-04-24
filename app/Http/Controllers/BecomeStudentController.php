@@ -8,7 +8,14 @@ class BecomeStudentController extends Controller
 {
     public function index(Request $request)
     {
-		$params = $request->input();
+        $params = [
+            'subjectOne' => null,
+            'levelOne' => null
+        ];
+
+        foreach($request->input() as $param => $value) {
+            $params[$param] = $value;
+        }
 
 		return response()
 				->view('become-student.index', [

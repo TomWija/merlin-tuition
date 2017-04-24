@@ -1,7 +1,7 @@
 <div class="container-fluid splash">
 	<div class="container">
 		<h1 class="splash__heading">{{ $pageContent->where('key', 'splash.header')->first()->content }}</h1>
-		<form action="{{ route('become-student') }}" class="splash__form">
+		<form action="{{ route('become-student') }}" method="get" class="splash__form">
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="rounded select--primary">

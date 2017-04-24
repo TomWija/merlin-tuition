@@ -12,19 +12,19 @@
 				<div class="row become-student__form-row">
 					<div class="col-xs-12">
 						<label>Full Name*</label>
-						<input type="text" />
+						<input name="name" type="text" required />
 					</div>
 				</div>
 
 				<div class="row become-student__form-row">
 					<div class="col-sm-6">
 						<label>E-mail Address*</label>
-						<input type="text" />
+						<input name="email" type="email" required />
 					</div>
 
 					<div class="col-sm-6">
 						<label>Contact Number</label>
-						<input type="text" />
+						<input name="number" type="text" />
 					</div>
 				</div>
 
@@ -33,9 +33,9 @@
 						<label>Subject</label>
 						<div class="rounded select--primary">
 							<select name="subjectOne">
-								<option {{ $params['subjectOne'] == 'English' ? "selected='selected'" : ""}}>English</option>
-								<option {{ $params['subjectOne'] == 'Maths' ? "selected='selected'" : ""}}>Maths</option>
-								<option {{ $params['subjectOne'] == 'ICT' ? "selected='selected'" : ""}}>ICT</option>
+								<option value="English" {{ $params['subjectOne'] == 'English' ? "selected='selected'" : ""}}>English</option>
+								<option value="Maths" {{ $params['subjectOne'] == 'Maths' ? "selected='selected'" : ""}}>Maths</option>
+								<option value="ICT" {{ $params['subjectOne'] == 'ICT' ? "selected='selected'" : ""}}>ICT</option>
 							</select>
 						</div>
 					</div>
@@ -44,9 +44,9 @@
 						<label>Level</label>
 						<div class="rounded select--primary ">
 							<select name="levelOne">
-								<option {{ $params['levelOne'] == 'GCSE' ? "selected='selected'" : ""}}>GCSE</option>
-								<option {{ $params['levelOne'] == 'ALevel' ? "selected='selected'" : ""}}>A-Level</option>
-								<option {{ $params['levelOne'] == 'BSc ? "selected='selected'" : ""}}>Bachelor's Degree</option>
+								<option value="GCSE" {{ $params['levelOne'] == 'GCSE' ? "selected='selected'" : ""}}>GCSE</option>
+								<option value="ALevel" {{ $params['levelOne'] == 'ALevel' ? "selected='selected'" : ""}}>A-Level</option>
+								<option value="BSc" {{ $params['levelOne'] == 'BSc' ? "selected='selected'" : ""}}>Bachelor's Degree</option>
 							</select>
 						</div>
 					</div>
@@ -61,7 +61,7 @@
 				<div class="row become-student__form-row">
 					<div class="col-xs-12">
 						<label>Location*</label>
-						<input type="text" />
+						<input name="location" type="text" required />
 					</div>
 				</div>
 
@@ -69,7 +69,7 @@
 					<div class="col-xs-12">
 						<label>Additional inormation</label>
 						<div>
-							<textarea rows="4"></textarea>
+							<textarea name="extraInfo" rows="4"></textarea>
 						</div>
 					</div>
 				</div>
