@@ -6,7 +6,7 @@
 	<div class="row text-center">
 		<h1>Sign Up As a Student Today</h1>
 	</div>
-	<form>
+	<form action="{{ route('become-student.submit') }}" method="POST">
 		<div class="row become-student__form-row vertical-gutters--large">
 			<div class="col-md-7">
 				<div class="row become-student__form-row">
@@ -76,6 +76,7 @@
 
 				<div class="row become-student__form-row">
 					<div class="col-xs-12">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input class="cta--primary rounded" type="submit" value="Submit" />
 					</div>
 				</div>

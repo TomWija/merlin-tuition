@@ -18,6 +18,8 @@ Route::get('about', function() {
 })->name('about');
 
 Route::get('become-student', 'BecomeStudentController@index')->name('become-student');
+Route::post('become-student', 'BecomeStudentController@index')->name('become-student');
+Route::post('become-student/submit', 'BecomeStudentController@submitApplication')->name('become-student.submit');
 
 Route::get('become-tutor', function() {
     return view('become-tutor.index');
