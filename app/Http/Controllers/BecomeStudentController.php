@@ -15,7 +15,8 @@ class BecomeStudentController extends Controller
      */
     public function index(Request $request)
     {
-        dump($request->input());
+        $flashMessage = $request->session()->pull('status');
+
         $params = [
             'subjectOne' => null,
             'levelOne' => null
@@ -27,7 +28,8 @@ class BecomeStudentController extends Controller
 
 		return response()
 				->view('become-student.index', [
-					'params' => $params
+					'params' => $params,
+                    'flashMessage' => $flashMessage
 				]);
     }
 
@@ -41,7 +43,7 @@ class BecomeStudentController extends Controller
      */
     public function submitApplication(Request $request)
     {
-        $request->session()->flash('status', 'Task was successful!');
+        $request->session()->flash('status', 'Thank you for your submission!');
         return redirect()->back()->withInput();
     }
 

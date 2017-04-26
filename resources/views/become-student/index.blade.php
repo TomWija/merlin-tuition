@@ -4,6 +4,9 @@
 
 <div class="become-student container vertical-gutters--large">
 	<div class="row text-center">
+		@if ($flashMessage)
+			<h2>{{ $flashMessage }}</h2>
+		@endif
 		<h1>Sign Up As a Student Today</h1>
 	</div>
 	<form action="{{ route('become-student.submit') }}" method="POST">
@@ -12,19 +15,19 @@
 				<div class="row become-student__form-row">
 					<div class="col-xs-12">
 						<label>Full Name*</label>
-						<input name="name" type="text" required />
+						<input name="name" type="text" value="{{ old('name') }}" required />
 					</div>
 				</div>
 
 				<div class="row become-student__form-row">
 					<div class="col-sm-6">
 						<label>E-mail Address*</label>
-						<input name="email" type="email" required />
+						<input name="email" type="email" value="{{ old('email') }}" required />
 					</div>
 
 					<div class="col-sm-6">
 						<label>Contact Number</label>
-						<input name="number" type="text" />
+						<input name="number" type="text" value="{{ old('number') }}" />
 					</div>
 				</div>
 
@@ -61,7 +64,7 @@
 				<div class="row become-student__form-row">
 					<div class="col-xs-12">
 						<label>Location*</label>
-						<input name="location" type="text" required />
+						<input name="location" type="text" value="{{ old('location') }}" required />
 					</div>
 				</div>
 
@@ -69,7 +72,7 @@
 					<div class="col-xs-12">
 						<label>Additional inormation</label>
 						<div>
-							<textarea name="extraInfo" rows="4"></textarea>
+							<textarea name="extraInfo" rows="4">{{ old('extraInfo') }}</textarea>
 						</div>
 					</div>
 				</div>
