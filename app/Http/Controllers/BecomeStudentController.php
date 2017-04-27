@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\StudentSignup;
 use Illuminate\Http\Request;
 use Illuminate\Http\Redirect;
+use Illuminate\Support\Facades\Mail;
 
 class BecomeStudentController extends Controller
 {
@@ -43,6 +45,7 @@ class BecomeStudentController extends Controller
      */
     public function submitApplication(Request $request)
     {
+        Mail::to('thomas.wija@gmail.com')->send(new StudentSignup());
         $request->session()->flash('status', 'Thank you for your submission!');
         return redirect()->back()->withInput();
     }
