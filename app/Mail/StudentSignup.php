@@ -11,14 +11,17 @@ class StudentSignup extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $params;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($params)
     {
-        //
+        unset($params['_token']);
+        $this->params = $params;
     }
 
     /**
@@ -28,6 +31,8 @@ class StudentSignup extends Mailable
      */
     public function build()
     {
+
+
         return $this->from('noreply@thomaswija.com')
                     ->view('emails.student-signup');
     }

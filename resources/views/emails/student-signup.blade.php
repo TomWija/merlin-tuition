@@ -1,1 +1,3 @@
-This is a test e-mail
+@foreach ($params as $label => $param)
+	<p>{{ $label }}: {{ $param }}</p>
+@endforeach
