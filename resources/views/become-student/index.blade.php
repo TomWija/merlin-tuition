@@ -5,7 +5,7 @@
 <div class="become-student container vertical-gutters--large">
 	<div class="row text-center">
 		@if ($flashMessage)
-			<h2>{{ $flashMessage }}</h2>
+			<h1 style="margin-bottom: 20px">{{ $flashMessage }}</h1>
 		@endif
 		<h1>Sign Up As a Student Today</h1>
 	</div>

@@ -31,8 +31,6 @@ class StudentSignup extends Mailable
      */
     public function build()
     {
-
-
         return $this->from('noreply@thomaswija.com')
                     ->view('emails.student-signup');
     }
