@@ -23,3 +23,5 @@ Route::post('become-student/submit', 'BecomeStudentController@submitApplication'
 
 Route::get('become-tutor', 'BecomeTutorController@index')->name('become-tutor');
 Route::post('become-tutor/submit', 'BecomeTutorController@submitApplication')->name('become-tutor.submit');
+
+Route::post('contact/submit', 'ContactController@submitContactForm')->name('submit-contact-form');

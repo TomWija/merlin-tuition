@@ -14,7 +14,7 @@
 			<li><a href="{{ route('about') }}">About Us</a></li>
 			<li><a href="{{ route('become-student') }}">Become a Student</a></li>
 			<li><a href="{{ route('become-tutor') }}">Become a Tutor</a></li>
-			<li><a href="{{ route('home') }}">Contact Us</a></li>
+			<li><a href="#" data-toggle="modal" data-target="#contactModal">Contact Us</a></li>
 		</ul>
 	</div>
 </div>
