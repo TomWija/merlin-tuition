@@ -21,6 +21,5 @@ Route::get('become-student', 'BecomeStudentController@index')->name('become-stud
 Route::post('become-student', 'BecomeStudentController@index')->name('become-student');
 Route::post('become-student/submit', 'BecomeStudentController@submitApplication')->name('become-student.submit');
 
-Route::get('become-tutor', function() {
-    return view('become-tutor.index');
-})->name('become-tutor');
+Route::get('become-tutor', 'BecomeTutorController@index')->name('become-tutor');
+Route::post('become-tutor/submit', 'BecomeTutorController@submitApplication')->name('become-tutor.submit');
