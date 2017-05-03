@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use Illuminate\Http\Request;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -22,9 +23,10 @@ class StudentSignup extends Mailable
      */
     public function __construct($params, $notification = false)
     {
-        unset($params['_token']);
-        $this->params = $params;
+        $this->params = $request->input();
         $this->notification = $notification;
+
+        unset($this->params['_token']);
     }
 
     /**

@@ -40,16 +40,12 @@ class BecomeTutorController extends Controller
      */
     public function submitApplication(Request $request)
     {
-		// foreach($request->supportingFiles as $file) {
-		// 	$fileName = $file->store('supportingFiles');
-		// }
-
         Mail::to('thomas.wija@gmail.com')
-            ->send(new TutorSignup($request->input()));
+            ->send(new TutorSignup($request));
 
 
         Mail::to('thomas.wija@gmail.com')
-            ->send(new TutorSignup($request->input(), true));
+            ->send(new TutorSignup($request, true));
 
         $request->session()->flash('status', 'Thank you for your submission!');
         return redirect()->back()->withInput();
