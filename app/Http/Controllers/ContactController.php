@@ -15,7 +15,7 @@ class ContactController extends Controller
 	 */
 	public function submitContactForm(Request $request)
     {
-        Mail::to('thomas.wija@gmail.com')
+        Mail::to($request->input()['email'])
             ->send(new ContactForm($request));
 
         $request->session()->flash('status', 'Thank you for your enquiry!');
