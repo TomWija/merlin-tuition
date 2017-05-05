@@ -13,9 +13,7 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('about', function() {
-    return view('about.index');
-})->name('about');
+Route::get('about', 'AboutController@index')->name('about');
 
 Route::get('become-student', 'BecomeStudentController@index')->name('become-student');
 Route::post('become-student', 'BecomeStudentController@index')->name('become-student');

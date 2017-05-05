@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Mail\TutorSignup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Page;
+use App\Models\PageContent;
 
 class BecomeTutorController extends Controller
 {
@@ -18,6 +20,7 @@ class BecomeTutorController extends Controller
     {
         $flashMessage = $request->session()->pull('status');
 		$params = array();
+		$pageContent = PageContent::where('page_id', 4)->get();
 
         foreach($request->input() as $param => $value) {
             $params[$param] = $value;
@@ -26,7 +29,8 @@ class BecomeTutorController extends Controller
 		return response()
 				->view('become-tutor.index', [
 					'params' => $params,
-                    'flashMessage' => $flashMessage
+                    'flashMessage' => $flashMessage,
+					'pageContent' => $pageContent
 				]);
     }
 

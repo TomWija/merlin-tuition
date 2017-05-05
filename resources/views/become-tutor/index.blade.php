@@ -7,7 +7,7 @@
 		@if ($flashMessage)
 			<h1 style="margin-bottom: 20px">{{ $flashMessage }}</h1>
 		@endif
-		<h1>Become a Tutor Today</h1>
+		<h1>{{ $pageContent->where('key', 'become_tutor.main_header')->first()->content }}</h1>
 	</div>
 	<form action="{{ route('become-tutor.submit') }}" method="POST" enctype="multipart/form-data">
 		<div class="row become-tutor__form-row vertical-gutters--large">
@@ -93,24 +93,11 @@
 
 			</div>
 			<div class="col-md-5">
-				<h2 class="text-center vertical-gutters--medium">Why Become a tutor?</h2>
-				<p>Tuition can be an extremely rewarding job. Hours can depend
-					on what you can give and there is nothing more satisfying
-					that seeing a student understanding a topic fully.</p>
-				<br />
-				<p>Here at Merlintuition we are constantly looking to find the
-					best tutors in all subjects and bring them together with
-					students to ensure the best experience for both.</p>
-				<br />
-				<p>So join us today to begin building up your client base. No
-					matter if you are new to tuition or an experienced we can
-					fit you in. Working together we will ensure that you are
-					advertised and supported with your students.</p>
+				<h2 class="text-center vertical-gutters--medium">{{ $pageContent->where('key', 'become_tutor.right_column.header_one')->first()->content }}</h2>
+				{!! $pageContent->where('key', 'become_tutor.right_column.content_one')->first()->content !!}
 
-				<h2 class="text-center vertical-gutters--medium">Any Questions?</h2>
-				<p>If you have any queries about becoming a tutor with merlin
-					tuition, please feel free to send me an e-mail at:</p>
-				<a href="mailto:admin@merlintuition.co.uk?Subject=Merlin%20Tutition%20Enquiry" target="_top">admin@merlintuition.co.uk</a>
+				<h2 class="text-center vertical-gutters--medium">{{ $pageContent->where('key', 'become_tutor.right_column.header_two')->first()->content }}</h2>
+				{!! $pageContent->where('key', 'become_tutor.right_column.content_two')->first()->content !!}
 			</div>
 		</div>
 	</form>

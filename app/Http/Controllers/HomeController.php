@@ -14,6 +14,7 @@ class HomeController extends Controller
 	{
 		$testimonials = Testimonial::get();
 		$pageContent = PageContent::where('page_id', 1)->get();
+		$splashHeader = PageContent::where('key', 'splash.header')->first()->content;
 
 		return response()
 				->view('home.index', [
