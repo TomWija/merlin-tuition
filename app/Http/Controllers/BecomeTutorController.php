@@ -44,11 +44,11 @@ class BecomeTutorController extends Controller
      */
     public function submitApplication(Request $request)
     {
-        Mail::to('thomas.wija@gmail.com')
+        Mail::to($request->input()['email'])
             ->send(new TutorSignup($request));
 
 
-        Mail::to('thomas.wija@gmail.com')
+        Mail::to($request->input()['email']) // This needs to be to the main admin of the site
             ->send(new TutorSignup($request, true));
 
         $request->session()->flash('status', 'Thank you for your submission!');

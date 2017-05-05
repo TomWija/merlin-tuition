@@ -21,7 +21,7 @@ class StudentSignup extends Mailable
      *
      * @return void
      */
-    public function __construct($params, $notification = false)
+    public function __construct($request, $notification = false)
     {
         $this->params = $request->input();
         $this->notification = $notification;

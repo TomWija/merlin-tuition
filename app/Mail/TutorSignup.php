@@ -45,11 +45,13 @@ class TutorSignup extends Mailable
             $email = $this->subject('A new tutor has enquired about becoming a tutor with you!')
                         ->view('emails.tutor-signup-notification');
 
-    		foreach($this->supportingFiles as $file) {
-                $email->attach(storage_path('app/' . $file->store('supportingFiles')), [
-                    'as' => 'blip.pdf',
-                    'mime' => 'application/pdf'
-                ]);
+            if ($this->supportingFiles) {
+        		foreach($this->supportingFiles as $file) {
+                    $email->attach(storage_path('app/' . $file->store('supportingFiles')), [
+                        'as' => 'blip.pdf',
+                        'mime' => 'application/pdf'
+                    ]);
+                }
     		}
 
             return $email;

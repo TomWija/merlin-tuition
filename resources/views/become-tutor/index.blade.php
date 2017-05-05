@@ -69,7 +69,7 @@
 
 				<div class="row become-tutor__form-row">
 					<div class="col-xs-12">
-						<label>Please upload any supporting files/documents (CV, DBS etc.)</label>
+						<label>Please upload any supporting files/documents (CV, DBS etc.) as a PDF</label>
 						<label for="supporting-file" class="file-upload-button"><span class="glyphicon glyphicon-open"></span>&nbsp;&nbsp;&nbsp;Upload a file or files</label>
 						<input type="file" class="inputfile" name="supportingFiles[]" id="supporting-file" data-multiple-caption="{count} files selected" multiple>
 					</div>

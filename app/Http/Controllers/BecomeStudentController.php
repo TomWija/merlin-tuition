@@ -53,11 +53,11 @@ class BecomeStudentController extends Controller
      */
     public function submitApplication(Request $request)
     {
-        Mail::to('thomas.wija@gmail.com')
+        Mail::to($request->input()['email'])
             ->send(new StudentSignup($request));
 
 
-        Mail::to('thomas.wija@gmail.com')
+        Mail::to($request->input()['email']) // This needs to be to the main admin of the site
             ->send(new StudentSignup($request, true));
 
         $request->session()->flash('status', 'Thank you for your submission!');
