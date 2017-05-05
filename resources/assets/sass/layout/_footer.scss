@@ -3,6 +3,17 @@
 	color: white;
 
 	&__copyright {
-		
+		text-align: center;
+
+		@include breakpoint(sm) {
+			text-align: left;
+		}
+	}
+
+	&__designed-by {
+		text-align: center;
+		@include breakpoint(sm) {
+			text-align: right;
+		}
 	}
 }
