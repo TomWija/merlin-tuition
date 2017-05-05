@@ -41,20 +41,18 @@ class TutorSignup extends Mailable
     public function build()
     {
         if ($this->notification) {
-                
-        		$fileNames = array();
+    		$fileNames = array();
+            $email = $this->subject('A new tutor has enquired about becoming a tutor with you!')
+                        ->view('emails.tutor-signup-notification');
 
-        		foreach($this->supportingFiles as $file) {
-        			$fileNames[] = $file->store('supportingFiles');
-        		}
-                // dump($fileNames); die;
-
-            return $this->subject('A new tutor has enquired about becoming a tutor with you!')
-                ->view('emails.tutor-signup-notification')
-                ->attach($fileNames[0], [
-                    'as' => 'test.pdf',
+    		foreach($this->supportingFiles as $file) {
+                $email->attach(storage_path('app/' . $file->store('supportingFiles')), [
+                    'as' => 'blip.pdf',
                     'mime' => 'application/pdf'
                 ]);
+    		}
+
+            return $email;
         } else {
             return $this->subject('Thank you for signing up to become a tutor with Merlin Tuition!')
                 ->view('emails.tutor-signup');
