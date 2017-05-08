@@ -53,15 +53,26 @@ class BecomeStudentController extends Controller
      */
     public function submitApplication(Request $request)
     {
-        Mail::to($request->input()['email'])
-            ->send(new StudentSignup($request));
+        $input = $request->input();
+
+        if(isset($input['name']) && isset($input['email']) && isset($input['subjectOne']) && isset($input['levelOne'])) {
+            Mail::to($request->input()['email'])
+                ->send(new StudentSignup($request));
 
 
-        Mail::to($request->input()['email']) // This needs to be to the main admin of the site
-            ->send(new StudentSignup($request, true));
+            Mail::to($request->input()['email']) // This needs to be to the main admin of the site
+                ->send(new StudentSignup($request, true));
 
-        $request->session()->flash('status', 'Thank you for your submission!');
-        return redirect()->back()->withInput();
+            $request->session()->flash('status', 'Thank you for your submission!');
+            return redirect()->back()->withInput();
+        } else {
+            $request->session()->flash('status', 'There was an error with your submission.');
+            return redirect()->back()->withInput();
+        }
+
+
+
+
     }
 
 }
