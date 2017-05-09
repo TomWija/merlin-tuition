@@ -44,14 +44,20 @@ class BecomeTutorController extends Controller
      */
     public function submitApplication(Request $request)
     {
-        Mail::to($request->input()['email'])
-            ->send(new TutorSignup($request));
+		$input = $request->input();
+
+		if(isset($input['name']) && isset($input['email']) && isset($input['subjectOne']) && isset($input['levelOne'])) {
+		    Mail::to($request->input()['email'])
+		        ->send(new TutorSignup($request));
 
 
-        Mail::to($request->input()['email']) // This needs to be to the main admin of the site
-            ->send(new TutorSignup($request, true));
+		    Mail::to($request->input()['email']) // This needs to be to the main admin of the site
+		        ->send(new TutorSignup($request, true));
 
-        $request->session()->flash('status', 'Thank you for your submission!');
-        return redirect()->back()->withInput();
+		    $request->session()->flash('status', 'Thank you for your submission!');
+		    return redirect()->back()->withInput();
+		} else {
+			
+		}
     }
 }

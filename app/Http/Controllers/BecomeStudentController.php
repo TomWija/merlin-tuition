@@ -55,7 +55,7 @@ class BecomeStudentController extends Controller
     {
         $input = $request->input();
 
-        if(isset($input['name']) && isset($input['email']) && isset($input['subjectOne']) && isset($input['levelOne'])) {
+        if(isset($input['name']) && isset($input['email']) && isset($input['whyTutor']) && isset($input['whatExperience']) && isset($input['whatSubjects']) && isset($input['whereTravel'])) {
             Mail::to($request->input()['email'])
                 ->send(new StudentSignup($request));
 
@@ -69,9 +69,6 @@ class BecomeStudentController extends Controller
             $request->session()->flash('status', 'There was an error with your submission.');
             return redirect()->back()->withInput();
         }
-
-
-
 
     }
 
