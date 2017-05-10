@@ -15,10 +15,17 @@ class ContactController extends Controller
 	 */
 	public function submitContactForm(Request $request)
     {
-        Mail::to($request->input()['email'])
-            ->send(new ContactForm($request));
+		$input = $request->input();
 
-        $request->session()->flash('status', 'Thank you for your enquiry!');
-        return redirect()->back()->withInput();
+		if (isset($input['name']) && isset($input['email']) && isset($input['enquiry'])) {
+	        Mail::to($request->input()['email'])
+	            ->send(new ContactForm($request));
+
+	        $request->session()->flash('status', 'Thank you for your enquiry!');
+	        return redirect()->back()->withInput();
+		} else {
+			$request->session()->flash('status', 'There was a problem with your submission.');
+	        return redirect()->back()->withInput();
+		}
     }
 }
