@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Testimonial;
 use App\Models\Page;
 use App\Models\PageContent;
+use App\Models\Subject;
 
 class HomeController extends Controller
 {
@@ -15,11 +16,13 @@ class HomeController extends Controller
 		$testimonials = Testimonial::get();
 		$pageContent = PageContent::where('page_id', 1)->get();
 		$splashHeader = PageContent::where('key', 'splash.header')->first()->content;
+		$subjects = Subject::get();
 
 		return response()
 				->view('home.index', [
 					'testimonials' => $testimonials,
-					'pageContent' => $pageContent
+					'pageContent' => $pageContent,
+					'subjects' => $subjects
 				]);
 	}
 }

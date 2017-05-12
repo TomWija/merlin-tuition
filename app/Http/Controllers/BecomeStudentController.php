@@ -8,6 +8,7 @@ use Illuminate\Http\Redirect;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Page;
 use App\Models\PageContent;
+use App\Models\Subject;
 
 class BecomeStudentController extends Controller
 {
@@ -19,6 +20,7 @@ class BecomeStudentController extends Controller
      */
     public function index(Request $request)
     {
+        $subjects = Subject::get();
         $flashMessage = $request->session()->pull('status');
 		$pageContent = PageContent::where('page_id', 3)->get();
 
@@ -39,7 +41,8 @@ class BecomeStudentController extends Controller
 				->view('become-student.index', [
 					'params' => $params,
                     'flashMessage' => $flashMessage,
-                    'pageContent' => $pageContent
+                    'pageContent' => $pageContent,
+                    'subjects' => $subjects
 				]);
     }
 

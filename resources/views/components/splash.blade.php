@@ -6,18 +6,22 @@
 				<div class="col-sm-4">
 					<div class="rounded select--primary">
 						<select name="subjectOne">
-							<option>English</option>
-							<option>Maths</option>
-							<option>ICT</option>
+							@foreach ($subjects as $subject)
+								<option value="{{ $subject->name }}">{{ $subject->name }}</option>
+							@endforeach
 						</select>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="rounded select--primary ">
 						<select name="levelOne">
-							<option>GCSE</option>
+							<option value="primary">Primary</option>
+							<option value="secondary">Secondary</option>
+							<option value="gcse">GCSE</option>
 							<option value="ALevel">A-Level</option>
-							<option value="BSc">Bachelor's Degree</option>
+							<option value="Bachelors">University - Bachelor's</option>
+							<option value="Masters">University - Master's</option>
+							<option value="adult-casual">Adult/Casual Learner</option>
 						</select>
 					</div>
 				</div>
