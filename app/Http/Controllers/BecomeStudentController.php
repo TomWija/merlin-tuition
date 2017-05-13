@@ -57,7 +57,6 @@ class BecomeStudentController extends Controller
     public function submitApplication(Request $request)
     {
         $input = $request->input();
-        dd($input);
 
         if(isset($input['name']) && isset($input['email']) && isset($input['subjectOne']) && isset($input['levelOne'])) {
             Mail::to($request->input()['email'])
