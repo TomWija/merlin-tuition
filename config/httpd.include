@@ -1,12 +1,12 @@
 <VirtualHost *:80>
 	ServerName merlintuition.tom.dev
 	ServerAdmin webmaster@localhost
-	DocumentRoot /var/www/vhosts/merlintuition/public
+	DocumentRoot /var/www/vhosts/merlin-tuition/public
 
 	ErrorLog ${APACHE_LOG_DIR}/error.log
 	CustomLog ${APACHE_LOG_DIR}/access.log combined
 
-	<Directory /var/www/vhosts/merlintuition/public>
+	<Directory /var/www/vhosts/merlin-tuition/public>
 		Allowoverride All
 	</Directory>	
 </VirtualHost>
