@@ -46,7 +46,7 @@ class BecomeTutorController extends Controller
     {
 		$input = $request->input();
 
-		if(isset($input['name']) && isset($input['email']) && isset($input['subjectOne']) && isset($input['levelOne'])) {
+		if(isset($input['name']) && isset($input['email']) && isset($input['whyTutor']) && isset($input['whatExperience']) && isset($input['whatSubjects']) && isset($input['whereTravel'])) {
 		    Mail::to($request->input()['email'])
 		        ->send(new TutorSignup($request));
 
@@ -57,7 +57,7 @@ class BecomeTutorController extends Controller
 		    $request->session()->flash('status', 'Thank you for your submission!');
 		    return redirect()->back()->withInput();
 		} else {
-			
+
 		}
     }
 }
