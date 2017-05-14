@@ -46,7 +46,7 @@
 					<div class="row contact-us__form-row">
 						<div class="col-xs-12">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
-							<input class="cta--primary rounded" type="submit" value="Send Enquiry" />
+							<input class="cta cta--primary rounded" type="submit" value="Send Enquiry" />
 						</div>
 					</div>
 

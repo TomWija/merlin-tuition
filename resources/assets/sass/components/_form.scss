@@ -42,18 +42,6 @@ input {
 	border-radius: 25px;
 	padding-left: 25px;
 
-	&.cta {
-		&--primary {
-			background: palette('fadedNavy');
-			background: linear-gradient(to right, palette('fadedNavy') , lighten(palette('fadedNavy'), 15%));
-			color: white;
-			border: none;
-		    font-weight: 100;
-	    	font-size: 1.8rem;
-			padding: 0;
-		}
-	}
-
 	&.inputfile {
 		display: none;
 	}

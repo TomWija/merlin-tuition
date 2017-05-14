@@ -27,7 +27,7 @@
 				</div>
 				<div class="col-sm-4">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
-					<input class="cta--primary rounded" type="submit" value="Become a Student" />
+					<input class="cta cta--primary rounded" type="submit" value="Become a Student" />
 				</div>
 			</div>
 		</form>

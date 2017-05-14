@@ -87,7 +87,7 @@
 				<div class="row become-tutor__form-row">
 					<div class="col-xs-12">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-						<input class="cta--primary rounded" type="submit" value="Submit application" />
+						<input class="cta cta--primary rounded" type="submit" value="Submit application" />
 					</div>
 				</div>
 

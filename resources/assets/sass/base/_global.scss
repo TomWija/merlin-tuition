@@ -44,3 +44,27 @@ body, html{
 		padding-left: 30px;
 	}
 }
+
+.cta {
+	text-align: center;
+	width: 100%;
+	height: 50px;
+	display: block;
+	line-height: 50px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: 100;
+	font-size: 1.8rem;
+	padding: 0;
+	color: white;
+	border: none;
+
+	&--primary {
+		background: palette('fadedNavy');
+		background: linear-gradient(to right, palette('fadedNavy') , lighten(palette('fadedNavy'), 15%));
+	}
+
+	&--secondary {
+		background: #8893a9;
+	}
+}
