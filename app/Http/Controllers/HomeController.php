@@ -10,19 +10,23 @@ use App\Models\Subject;
 
 class HomeController extends Controller
 {
+    /**
+     * Show the application home page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+ 	public function index(Request $request)
+ 	{
+ 		$testimonials = Testimonial::get();
+ 		$pageContent = PageContent::where('page_id', 1)->get();
+ 		$splashHeader = PageContent::where('key', 'splash.header')->first()->content;
+ 		$subjects = Subject::get();
 
-	public function index(Request $request)
-	{
-		$testimonials = Testimonial::get();
-		$pageContent = PageContent::where('page_id', 1)->get();
-		$splashHeader = PageContent::where('key', 'splash.header')->first()->content;
-		$subjects = Subject::get();
-
-		return response()
-				->view('home.index', [
-					'testimonials' => $testimonials,
-					'pageContent' => $pageContent,
-					'subjects' => $subjects
-				]);
-	}
+ 		return response()
+ 				->view('home.index', [
+ 					'testimonials' => $testimonials,
+ 					'pageContent' => $pageContent,
+ 					'subjects' => $subjects
+ 				]);
+ 	}
 }
