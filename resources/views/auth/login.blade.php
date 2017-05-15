@@ -33,6 +33,16 @@
                                 </div>
                             </div>
 
+                            <div class="row login__form-row">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+
                     		<div class="row login__form-row">
                                 <div class="col-md-5 col-md-offset-1">
             						<input class="cta cta--primary rounded" type="submit" value="Submit" />
