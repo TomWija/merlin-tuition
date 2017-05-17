@@ -2,6 +2,6 @@
 
 @section('admin-panel-content')
 
-	UNDER CONSTRUCTION
+	PAGE CONTENT
 
 @endsection

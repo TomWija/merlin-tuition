@@ -3,7 +3,34 @@
 	margin-bottom: 20px;
 	border: 1px solid #cecece;
 
+	.row {
+		background-color: white;
+	}
+
 	&__main-panel {
 		background-color: white;
+	}
+
+	&__nav-panel {
+		font-weight: bold;
+		text-align: center;
+		color: white;
+
+		.nav-row {
+			background-color: palette('fadedNavy');
+
+			&:hover, &:focus {
+				background-color: lighten(palette('fadedNavy'), 15%);
+			}
+		}
+
+		.nav-link {
+			color: white;
+
+			&:hover, &:focus {
+				text-decoration: underline;
+				color: white;
+			}
+		}
 	}
 }

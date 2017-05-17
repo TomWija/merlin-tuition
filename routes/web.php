@@ -14,6 +14,7 @@
 Auth::routes();
 
 Route::get('admin', 'Admin\HomeController@index')->name('admin-home');
+Route::get('admin/page-content', 'Admin\PageContentController@index')->name('admin-page-content');
 
 Route::get('/', 'HomeController@index')->name('home');
 
