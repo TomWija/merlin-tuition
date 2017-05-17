@@ -1,0 +1,13 @@
+.auth {
+	display: flex;
+	height: 100vh;
+
+	.login {
+		margin: auto;
+	}
+
+	.panel-heading {
+		background-color: palette('fadedNavy');
+		color: white;
+	}
+}
