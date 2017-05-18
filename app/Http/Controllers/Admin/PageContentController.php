@@ -40,68 +40,33 @@ class PageContentController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\PageContent  $pageContent
-     * @return \Illuminate\Http\Response
-     */
-    public function show(PageContent $pageContent)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\PageContent  $pageContent
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(PageContent $pageContent)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  array                    $data
      * @param  \App\Models\PageContent  $pageContent
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PageContent $pageContent)
+    public function updateOne($data, PageContent $pageContent)
     {
         //
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Update the specified resources in storage.
      *
-     * @param  \App\Models\PageContent  $pageContent
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PageContent $pageContent)
+    public function updateAll(Request $request)
     {
-        //
+        $input = $request->input();
+        $page = Page::where('page_name', $input['pageName'])->get()->first();
+        $pageContents = PageContent::where('page_id', $page->id)->get();
+
+        foreach($pageContents as $pageContent) {
+            $pageContent->content = $input['pageSection'][$pageContent->page_section];
+            $pageContent->save();
+        }
+
+        return redirect()->back()->withInput();
     }
 }

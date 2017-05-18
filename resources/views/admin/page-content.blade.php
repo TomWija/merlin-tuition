@@ -11,11 +11,16 @@
 	<div class="tab-content">
 		@foreach($pages as $page)
 			<div id="{{ $page->page_name }}" class="tab-pane fade in {{ $page->id == 1 ? "active" : "" }}">
-				<h3 class="vertical-gutters--medium">{{ $page->page_label }} Content</h3>
-				@foreach($pageContent[$page->page_name] as $pageSection)
-					<h4>{{ $pageSection->key }}</h4>
-					<textarea>{{ $pageSection->content }}</textarea>
-				@endforeach
+				<h2 class="vertical-gutters--medium">{{ $page->page_label }} Content</h2>
+                <form action="{{ route('admin-page-content.update') }}" method="POST">
+    				@foreach($pageContent[$page->page_name] as $pageSection)
+    					<h4>{{ $pageSection->key }}</h4>
+    					<textarea rows="4" name="pageSection[{{ $pageSection->page_section }}]">{{ $pageSection->content }}</textarea>
+    				@endforeach
+					<input type="hidden" name="pageName" value="{{ $page->page_name }}">
+					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input class="cta cta--primary rounded" type="submit" value="Submit" />
+                </form>
 			</div>
 		@endforeach
 	</div>
