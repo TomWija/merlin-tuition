@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\PageContent;
+use App\Models\Page;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -25,7 +26,17 @@ class PageContentController extends Controller
      */
     public function index()
     {
-        return response()->view('admin.page-content');
+        $pages = Page::get();
+        $pageContent = array();
+
+        foreach($pages as $page) {
+            $pageContent[$page->page_name] = PageContent::where('page_id', $page->id)->get();
+        }
+
+        return response()->view('admin.page-content', [
+            'pages' => $pages,
+            'pageContent' => $pageContent
+        ]);
     }
 
     /**

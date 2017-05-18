@@ -1,0 +1,18 @@
+.tab-content {
+	margin-top: 10px;
+}
+
+.nav-tabs {
+	li {
+		&.active {
+			a, a:focus {
+				background-color: palette('fadedNavy');
+				color: white;
+			}
+		}
+
+		a {
+			border-radius: 0;
+		}
+	}
+}
