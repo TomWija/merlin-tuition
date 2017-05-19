@@ -14,6 +14,14 @@
 	</div>
 </a>
 
+<a class="nav-link" href="{{ route('admin.testimonials') }}">
+	<div class="row nav-row vertical-gutters--medium">
+		<div class="col-xs-12">
+			Testimonials
+		</div>
+	</div>
+</a>
+
 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 	<div class="row nav-row vertical-gutters--medium">
 		<div class="col-xs-12">

@@ -16,6 +16,7 @@ Auth::routes();
 Route::get('admin', 'Admin\HomeController@index')->name('admin-home');
 Route::get('admin/page-content', 'Admin\PageContentController@index')->name('admin-page-content');
 Route::post('admin/page-content/update', 'Admin\PageContentController@updateAll')->name('admin-page-content.update');
+Route::get('admin/testimonials', 'Admin\TestimonialController@index')->name('admin.testimonials');
 
 Route::get('/', 'HomeController@index')->name('home');
 
