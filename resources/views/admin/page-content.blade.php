@@ -14,7 +14,7 @@
 				<h2 class="vertical-gutters--medium">{{ $page->page_label }} Content</h2>
                 <form action="{{ route('admin-page-content.update') }}" method="POST">
     				@foreach($pageContent[$page->page_name] as $pageSection)
-    					<h4>{{ $pageSection->key }}</h4>
+    					<h4 class="vertical-gutters--medium">{{ $pageSection->key }}</h4>
     					<textarea rows="4" name="pageSection[{{ $pageSection->page_section }}]">{{ $pageSection->content }}</textarea>
     				@endforeach
 					<input type="hidden" name="pageName" value="{{ $page->page_name }}">

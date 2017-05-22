@@ -82,4 +82,17 @@ class SubjectController extends Controller
     {
         //
     }
+
+    /**
+     * Find the levels for a given subject encoded in Json
+     *
+     * @param int $subjectId
+     */
+    public function getSubjectLevelsAsJson($subjectId = 1)
+    {
+        $subject = Subject::find($subjectId);
+        $levels = $subject->getAttributes();
+        unset($levels['id'], $levels['created_at'], $levels['updated_at'], $levels['name']);
+        return response()->json($levels);
+    }
 }
