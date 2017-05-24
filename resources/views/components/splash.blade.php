@@ -15,6 +15,7 @@
 				<div class="col-sm-4">
 					<div class="rounded select--primary ">
 						<select name="levelOne">
+                            <option>Choose a level</option>
 							<option value="primary">Primary</option>
 							<option value="secondary">Secondary</option>
 							<option value="gcse">GCSE</option>
