@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Merlin Tuition</title>
 
@@ -12,7 +13,13 @@
         <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=l99yw2pv4tseecoqj9itmd6u0d24pup3tkspobc71slnwom1"></script>
         <script>tinymce.init({ selector:'textarea',
                                plugins: 'lists',
-                               toolbar:'bold italic underline alignleft alignright aligncenter fontsizeselect undo redo numlist bullist'});</script>
+                               toolbar:'bold italic underline alignleft alignright aligncenter fontsizeselect undo redo numlist bullist'});
+        </script>
+        <script>
+            window.Laravel = {!! json_encode([
+                'csrfToken' => csrf_token(),
+            ]) !!};
+        </script>
     </head>
     <body>
         @include('layouts.heading')
