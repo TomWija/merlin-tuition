@@ -1,5 +1,8 @@
 body, html{
 	background-color: palette('paper');
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .stop-scrolling {

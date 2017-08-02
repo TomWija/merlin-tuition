@@ -11198,7 +11198,6 @@ var setupNavToggle = __webpack_require__(31),
     setupFileUploader = __webpack_require__(30);
 
 setupNavToggle();
-
 setupFileUploader();
 
 /***/ }),
