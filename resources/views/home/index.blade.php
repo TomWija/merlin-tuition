@@ -34,4 +34,18 @@
 
 @include('components.testimonials')
 
+<div class="container badges">
+    <div class="row">
+        <div class="col-md-7">
+            <div id="kallikids_review_widget_highscore_v"
+                data-provider="9d2682367c3935defcb1f9e247a97c0d"
+                data-domain="https://kallikids.com">
+            </div>
+        </div>
+        <div class="col-md-5">
+            <img class="tutors-association" src="{{ asset('images/corporate-member.png') }}"></img>
+        </div>
+    </div>
+</div>
+
 @endsection

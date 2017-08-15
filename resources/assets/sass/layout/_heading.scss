@@ -76,6 +76,10 @@
 		color: white;
 		background-color: rgba(68,76,92, 100);
 		z-index: 99;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
 
 		@include breakpoint(sm) {
 			padding-top: 146px;

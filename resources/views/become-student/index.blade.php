@@ -84,9 +84,17 @@
 				<div class="row become-student__form-row">
 					<div class="col-xs-12">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-						<input class="cta cta--primary rounded" type="submit" value="Submit" />
+						<input id="become-student-submit-btn" class="cta cta--primary rounded" type="submit" value="Submit" />
 					</div>
 				</div>
+
+                <div class="row">
+                    <div id="kallikids_review_widget_highscore_v"
+                        data-provider="9d2682367c3935defcb1f9e247a97c0d"
+                        data-domain="https://kallikids.com">
+                    </div>
+                </div>
+
 			</div>
 
 			<div class="col-md-5">
