@@ -6,25 +6,25 @@
 
 <div class="home container vertical-gutters--large">
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-md-4 card-col">
 			<div class="home__card">
-				<div class="home__card-image" style="background: url({{ asset('placeholder.png') }});"></div>
+				<div class="home__card-image" style="background: url({{ asset('images/circle_hat.png') }});"></div>
 				{!! $pageContent->where('key', 'home.left_column.header')->first()->content !!}
 				{!! $pageContent->where('key', 'home.left_column.text')->first()->content !!}
 			</div>
 		</div>
 
-		<div class="col-md-4">
+		<div class="col-md-4 card-col">
 			<div class="home__card">
-				<div class="home__card-image" style="background: url({{ asset('placeholder.png') }});"></div>
+				<div class="home__card-image" style="background: url({{ asset('images/circle_clipboard.png') }});"></div>
 				{!! $pageContent->where('key', 'home.middle_column.header')->first()->content !!}
 				{!! $pageContent->where('key', 'home.middle_column.text')->first()->content !!}
 			</div>
 		</div>
 
-		<div class="col-md-4">
+		<div class="col-md-4 card-col">
 			<div class="home__card">
-				<div class="home__card-image" style="background: url({{ asset('placeholder.png') }});"></div>
+				<div class="home__card-image" style="background: url({{ asset('images/circle_brighton.png') }});"></div>
 				{!! $pageContent->where('key', 'home.right_column.header')->first()->content !!}
 				{!! $pageContent->where('key', 'home.right_column.text')->first()->content !!}
 			</div>
