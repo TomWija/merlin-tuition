@@ -25,12 +25,12 @@ class BecomeStudentController extends Controller
 		$pageContent = PageContent::where('page_id', 3)->get();
 
         $params = [
-            'subjectOne' => null,
-            'levelOne' => null,
-            'subjectTwo' => null,
-            'levelTwo' => null,
-            'subjectThree' => null,
-            'levelThree' => null
+            'subject1' => null,
+            'level1' => null,
+            'subject2' => null,
+            'level2' => null,
+            'subject3' => null,
+            'level3' => null
         ];
 
         foreach($request->input() as $param => $value) {
@@ -58,7 +58,7 @@ class BecomeStudentController extends Controller
     {
         $input = $request->input();
 
-        if(isset($input['name']) && isset($input['email']) && isset($input['subjectOne']) && isset($input['levelOne'])) {
+        if(isset($input['name']) && isset($input['email']) && isset($input['subject1']) && isset($input['level1'])) {
             Mail::to($request->input()['email'])
                 ->send(new StudentSignup($request));
 

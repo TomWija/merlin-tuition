@@ -32,3 +32,4 @@ Route::post('become-tutor/submit', 'BecomeTutorController@submitApplication')->n
 Route::post('contact/submit', 'ContactController@submitContactForm')->name('submit-contact-form');
 
 Route::get('subjects/get-levels', 'SubjectController@getSubjectLevelsAsJson')->name('get-subject-levels');
+Route::get('subjects/get-subjects', 'SubjectController@getSubjectsJson')->name('get-subjects');

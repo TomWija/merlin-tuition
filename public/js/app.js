@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 38);
+/******/ 	return __webpack_require__(__webpack_require__.s = 39);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -11193,15 +11193,17 @@ process.umask = function() { return 0; };
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(29);
-__webpack_require__(32);
+__webpack_require__(33);
 
-var setupNavToggle = __webpack_require__(33),
-    setupFileUploader = __webpack_require__(30),
-    setupGaEvents = __webpack_require__(31);
+var setupNavToggle = __webpack_require__(34),
+    setupFileUploader = __webpack_require__(31),
+    setupGaEvents = __webpack_require__(32),
+    setupAddSubject = __webpack_require__(30);
 
 setupNavToggle();
 setupFileUploader();
 setupGaEvents();
+setupAddSubject();
 
 /***/ }),
 /* 10 */
@@ -12055,7 +12057,7 @@ module.exports = function spread(callback) {
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(35);
+window._ = __webpack_require__(36);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -12065,7 +12067,7 @@ window._ = __webpack_require__(35);
 
 window.$ = window.jQuery = __webpack_require__(1);
 
-__webpack_require__(34);
+__webpack_require__(35);
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -12082,6 +12084,60 @@ window.axios.defaults.headers.common = {
 
 /***/ }),
 /* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {var buildSubjectDropdown = function buildSubjectDropdown(subjects) {
+    var html = '<div class="col-sm-6"><label>Subject ' + window.numSubjects + '</label>';
+    html += '<div class="rounded select--primary"><select name="subject' + window.numSubjects + '">';
+    html += '<option value="">Choose Subject</option>';
+
+    subjects.forEach(function (subject) {
+        html += '<option value="' + subject.name + '">' + subject.name + '</option>';
+    });
+
+    html += '</select></div></div>';
+
+    return html;
+};
+
+var buildLevelDropdown = function buildLevelDropdown() {
+    return '<div class="col-sm-6">' + '<label>Level ' + window.numSubjects + '</label>' + '<div class="rounded select--primary">' + '<select name="level' + window.numSubjects + '">' + '<option value="">Choose Level</option>' + '</select>' + '</div>' + '</div>';
+};
+
+var setup = function setup() {
+    window.numSubjects = 1;
+    $('#add-subject-button').click(function (e) {
+        e.preventDefault();
+
+        var $addSubjectRow = $(this).parent().parent();
+
+        window.numSubjects += 1;
+        $.ajax({
+            url: "/subjects/get-subjects",
+            success: function success(data) {
+                var subjectDropdown = buildSubjectDropdown(data),
+                    levelDropdown = buildLevelDropdown(),
+                    subjectSelector = '<div class="row become-student__form-row"> ' + subjectDropdown + levelDropdown + '</div>';
+
+                $addSubjectRow.before(subjectSelector);
+
+                if (window.numSubjects >= 3) {
+                    $addSubjectRow.remove();
+                    $('#add-subject-button').remove();
+                }
+            },
+            error: function error() {
+                console.log('nay');
+            }
+        });
+    });
+};
+
+module.exports = setup;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {var setup = function setup() {
@@ -12104,7 +12160,7 @@ module.exports = function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {var setup = function setup() {
@@ -12120,7 +12176,7 @@ module.exports = function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports) {
 
 (function (window, document) {
@@ -12134,7 +12190,7 @@ module.exports = function () {
 })(window, document);
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {var setup = function setup() {
@@ -12183,7 +12239,7 @@ module.exports = function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/*!
@@ -14567,7 +14623,7 @@ if (typeof jQuery === 'undefined') {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -31656,10 +31712,10 @@ if (typeof jQuery === 'undefined') {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(36), __webpack_require__(37)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(37), __webpack_require__(38)(module)))
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports) {
 
 var g;
@@ -31686,7 +31742,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -31714,7 +31770,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(9);

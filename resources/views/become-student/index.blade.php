@@ -33,27 +33,27 @@
 
 				<div class="row become-student__form-row">
 					<div class="col-sm-6">
-						<label>Subject One*</label>
+						<label>Subject 1*</label>
 						<div class="rounded select--primary">
-							<select name="subjectOne">
+							<select name="subject1">
 								@foreach ($subjects as $subject)
-									<option value="{{ $subject->name }}" {{ $params['subjectOne'] == $subject->name ? "selected='selected'" : ""}}>{{ $subject->name }}</option>
+									<option value="{{ $subject->name }}" {{ $params['subject1'] == $subject->name ? "selected='selected'" : ""}}>{{ $subject->name }}</option>
 								@endforeach
 							</select>
 						</div>
 					</div>
 
 					<div class="col-sm-6">
-						<label>Level One*</label>
+						<label>Level 1*</label>
 						<div class="rounded select--primary ">
-							<select name="levelOne">
-								<option value="primary" {{ $params['levelOne'] == 'primary' ? "selected='selected'" : ""}}>Primary</option>
-								<option value="secondary" {{ $params['levelOne'] == 'secondary' ? "selected='selected'" : ""}}>Secondary</option>
-								<option value="gcse" {{ $params['levelOne'] == 'gcse' ? "selected='selected'" : ""}}>GCSE</option>
-								<option value="ALevel" {{ $params['levelOne'] == 'ALevel' ? "selected='selected'" : ""}}>A-Level</option>
-								<option value="Bachelors" {{ $params['levelOne'] == 'Bachelors' ? "selected='selected'" : ""}}>University - Bachelor's</option>
-								<option value="Masters" {{ $params['levelOne'] == 'Masters' ? "selected='selected'" : ""}}>University - Master's</option>
-								<option value="adult-casual" {{ $params['levelOne'] == 'adult-casual' ? "selected='selected'" : ""}}>Adult/Casual</option>
+							<select name="level1">
+								<option value="primary" {{ $params['level1'] == 'primary' ? "selected='selected'" : ""}}>Primary</option>
+								<option value="secondary" {{ $params['level1'] == 'secondary' ? "selected='selected'" : ""}}>Secondary</option>
+								<option value="gcse" {{ $params['level1'] == 'gcse' ? "selected='selected'" : ""}}>GCSE</option>
+								<option value="ALevel" {{ $params['level1'] == 'ALevel' ? "selected='selected'" : ""}}>A-Level</option>
+								<option value="Bachelors" {{ $params['level1'] == 'Bachelors' ? "selected='selected'" : ""}}>University - Bachelor's</option>
+								<option value="Masters" {{ $params['level1'] == 'Masters' ? "selected='selected'" : ""}}>University - Master's</option>
+								<option value="adult-casual" {{ $params['level1'] == 'adult-casual' ? "selected='selected'" : ""}}>Adult/Casual</option>
 							</select>
 						</div>
 					</div>
@@ -61,7 +61,7 @@
 
 				<div class="row become-student__form-row vertical-gutters--medium">
 					<div class="col-xs-12">
-						<a class="become-student__add-subject-button" href="#">Add another subject...</a>
+						<a id="add-subject-button" class="become-student__add-subject-button" href="">Add another subject...</a>
 					</div>
 				</div>
 
