@@ -86,17 +86,23 @@ class SubjectController extends Controller
     /**
      * Find the levels for a given subject encoded in Json
      *
-     * @param int $subjectId
+     * @param string $name optional, if given, find by subject name instead of ID
      */
-    public function getSubjectLevelsAsJson($subjectId = 1)
+    public function getSubjectLevelsAsJson($subjectName = null)
     {
-        $subject = Subject::find($subjectId);
+        $subjectName = urldecode($subjectName);
+        $subject = Subject::where('name', $subjectName)->get()->first();
         $levels = $subject->getAttributes();
         unset($levels['id'], $levels['created_at'], $levels['updated_at'], $levels['name']);
-        return response()->json($levels);
+
+        $parsedSubjects = array();
+        foreach($levels as $level => $available) {
+            if ($available) {
+                $parsedSubjects[] = $this->parseSubject($level);
+            }
+        }
+        return response()->json($parsedSubjects);
     }
-
-
 
     /**
      * Find the levels for a given subject encoded in Json
@@ -107,5 +113,27 @@ class SubjectController extends Controller
     {
         $subjects = Subject::all();
         return response()->json($subjects);
+    }
+
+    private function parseSubject($subject)
+    {
+        switch ($subject) {
+            case "primary":
+                return "Primary";
+            case "secondary":
+                return "Secondary";
+            case "gcse":
+                return "GCSE";
+            case "alevel":
+                return "A-Level";
+            case "university_bachelors":
+                return "University - Bachelor's";
+            case "university_masters":
+                return "University - Master's";
+            case "adult_casual":
+                return "Adult/Casual Learner";
+            default:
+                break;
+        }
     }
 }

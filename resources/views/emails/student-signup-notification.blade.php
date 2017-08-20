@@ -28,18 +28,62 @@
 						<tr>
 							<td>
 								<center>
-									<table width="610" align="center" cellpadding="15" bgcolor="#FFFFFF" style="text-align: center; padding: 3px; border: 1px solid #ececec;">
+									<table width="610" align="center" cellpadding="15" cellspacing="0" bgcolor="#FFFFFF" style="text-align: center; padding: 3px; border: 1px solid #ececec;">
 										<tr>
 											<td colspan=2>
 												<p>A new student has signed up with the following details: </p>
 											</td>
 										</tr>
-										@foreach ($params as $label => $param)
-											<tr>
-												<td style="border-bottom: 1px solid gray"><strong>{{ $label }}</strong></td>
-												<td style="border-bottom: 1px solid gray">{{ $param }}</td>
-											</tr>
-										@endforeach
+
+										<tr>
+											<td><strong>Full Name</strong></td>
+											<td>{{ $params['name'] }}</td>
+										</tr>
+
+										<tr>
+											<td><strong>E-Mail</strong></td>
+											<td>{{ $params['email'] }}</td>
+										</tr>
+
+										<tr>
+											<td><strong>Contact Number</strong></td>
+											<td>{{ $params['number'] }}</td>
+										</tr>
+
+										<tr>
+											<td><strong>Location</strong></td>
+											<td>{{ $params['location'] }}</td>
+										</tr>
+
+										<tr>
+											<td style="padding-bottom: 35px;"><strong>Additional Information</strong></td>
+											<td style="padding-bottom: 35px;">{{ $params['extraInfo'] }}</td>
+										</tr>
+
+                                        <tr>
+											<td style="border-bottom: 1px solid grey; border-top: 1px solid grey;"><strong>Subject</strong></td>
+											<td style="border-bottom: 1px solid grey; border-top: 1px solid grey;"><strong>Level</strong></td>
+										</tr>
+
+                                        <tr>
+											<td style="border-right: 1px solid grey;">{{ $params['subject1'] }}</td>
+											<td>{{ $params['level1'] }}</td>
+										</tr>
+
+                                        @if (isset($params['subject2']))
+                                            <tr>
+    											<td style="border-right: 1px solid grey;">{{ $params['subject2'] }}</td>
+    											<td>{{ $params['level2'] }}</td>
+    										</tr>
+                                        @endif
+
+                                        @if (isset($params['subject3']))
+                                            <tr>
+    											<td style="border-right: 1px solid grey;">{{ $params['subject3'] }}</td>
+    											<td>{{ $params['level3'] }}</td>
+    										</tr>
+                                        @endif
+
 									</table>
 								</center>
 							</td>

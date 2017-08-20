@@ -5,7 +5,7 @@
 <div class="become-student container vertical-gutters--large">
 	<div class="row text-center">
 		@if ($flashMessage)
-			<h1 style="margin-bottom: 20px">{{ $flashMessage }}</h1>
+			<div class="alert alert-info">{{ $flashMessage }}<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></div>
 		@endif
 		<h1>{{ $pageContent->where('key', 'main_header')->first()->content }}</h1>
 	</div>
@@ -35,7 +35,7 @@
 					<div class="col-sm-6">
 						<label>Subject 1*</label>
 						<div class="rounded select--primary">
-							<select name="subject1">
+							<select class="splash-subject-selector" name="subject1">
 								@foreach ($subjects as $subject)
 									<option value="{{ $subject->name }}" {{ $params['subject1'] == $subject->name ? "selected='selected'" : ""}}>{{ $subject->name }}</option>
 								@endforeach
@@ -46,7 +46,8 @@
 					<div class="col-sm-6">
 						<label>Level 1*</label>
 						<div class="rounded select--primary ">
-							<select name="level1">
+							<select class="splash-level-selector" name="level1">
+                                <option>Choose a Level</option>
 								<option value="primary" {{ $params['level1'] == 'primary' ? "selected='selected'" : ""}}>Primary</option>
 								<option value="secondary" {{ $params['level1'] == 'secondary' ? "selected='selected'" : ""}}>Secondary</option>
 								<option value="gcse" {{ $params['level1'] == 'gcse' ? "selected='selected'" : ""}}>GCSE</option>

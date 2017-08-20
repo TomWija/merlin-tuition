@@ -1,6 +1,8 @@
+var setupChangeEvents = require('./get-levels');
+
 var buildSubjectDropdown = function(subjects) {
     var html = '<div class="col-sm-6"><label>Subject ' + window.numSubjects + '</label>';
-    html += '<div class="rounded select--primary"><select name="subject' + window.numSubjects + '">'
+    html += '<div class="rounded select--primary"><select class="splash-subject-selector" name="subject' + window.numSubjects + '">'
     html += '<option value="">Choose Subject</option>';
 
     subjects.forEach(function(subject) {
@@ -16,7 +18,7 @@ var buildLevelDropdown = function() {
     return '<div class="col-sm-6">'
          + '<label>Level ' + window.numSubjects + '</label>'
          + '<div class="rounded select--primary">'
-         + '<select name="level' + window.numSubjects + '">'
+         + '<select class="splash-level-selector" name="level' + window.numSubjects + '">'
          + '<option value="">Choose Level</option>'
          + '</select>'
          + '</div>'
@@ -44,6 +46,8 @@ var setup = function() {
                     $addSubjectRow.remove();
                     $('#add-subject-button').remove();
                 }
+
+                setupChangeEvents();
             },
             error: function() {
                 console.log('nay');

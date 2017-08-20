@@ -28,7 +28,7 @@
 						<tr>
 							<td>
 								<center>
-									<table width="610" align="center" cellpadding="15" bgcolor="#FFFFFF" style="text-align: center; padding: 3px; border: 1px solid #ececec;">
+									<table width="610" align="center" cellpadding="15" cellspacing="0" bgcolor="#FFFFFF" style="text-align: center; padding: 3px; border: 1px solid #ececec;">
 										<tr>
 											<td colspan=2>
 												<p>A new tutor has signed up and enquired with the following details: </p>

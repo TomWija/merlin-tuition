@@ -5,7 +5,8 @@
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="rounded select--primary">
-						<select name="subjectOne">
+						<select class="splash-subject-selector" name="subject1">
+                                <option value="0">Choose a Subject</option>
 							@foreach ($subjects as $subject)
 								<option value="{{ $subject->name }}">{{ $subject->name }}</option>
 							@endforeach
@@ -14,15 +15,8 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="rounded select--primary ">
-						<select name="levelOne">
-                            <option>Choose a level</option>
-							<option value="primary">Primary</option>
-							<option value="secondary">Secondary</option>
-							<option value="gcse">GCSE</option>
-							<option value="ALevel">A-Level</option>
-							<option value="Bachelors">University - Bachelor's</option>
-							<option value="Masters">University - Master's</option>
-							<option value="adult-casual">Adult/Casual Learner</option>
+						<select class="splash-level-selector" name="level1">
+                            <option>Choose a Level</option>
 						</select>
 					</div>
 				</div>

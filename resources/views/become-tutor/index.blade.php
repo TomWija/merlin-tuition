@@ -5,7 +5,7 @@
 <div class="become-tutor container vertical-gutters--large">
 	<div class="row text-center">
 		@if ($flashMessage)
-			<h1 style="margin-bottom: 20px">{{ $flashMessage }}</h1>
+			<div class="alert alert-info">{{ $flashMessage }}<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></div>
 		@endif
 		<h1>{{ $pageContent->where('key', 'become_tutor.main_header')->first()->content }}</h1>
 	</div>

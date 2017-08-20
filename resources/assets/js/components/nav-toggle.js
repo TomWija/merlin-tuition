@@ -34,7 +34,7 @@ var setup = function() {
     	}
     }
 
-    window.addEventListener('scroll', _.throttle(shrinkBranding, 1000, { trailing: true, leading: true }));
+    window.addEventListener('scroll', _.throttle(shrinkBranding, 200, { trailing: true, leading: true }));
 }
 
 module.exports = function() {
